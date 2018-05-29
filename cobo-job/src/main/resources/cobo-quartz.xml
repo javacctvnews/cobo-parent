@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-lazy-init="false">
+
+    <context:component-scan base-package="com"/>
+
+
+    <!-- 调度器 如果lazy-init为false,则容器启动将会执行调度程序-->
+    <bean id="scheduler" lazy-init="true" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+
+
+    </bean>
+
+
+    <bean id="jobManager" class="com.javacctvnews.job.JobManager" lazy-init="false" init-method="startAllJobs">
+        <!--将这个类交给scheduler进行管理-->
+        <property name="scheduler" ref="scheduler"/>
+    </bean>
+
+
+
+
+</beans>
