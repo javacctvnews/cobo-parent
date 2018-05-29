@@ -1,38 +1,29 @@
 package com.javacctvnews;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest{
+
+    @Test
+    public void test001(){
+
+        int[] arr = {1,2,2,3,1,3,2};
+
+        for (int i=0;i<arr.length;i++){
+
+        }
+
+    }
+    @Test
+    public void test002(){
+
+        String str = "abcdefg";
+
+
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
